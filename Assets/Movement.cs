@@ -49,6 +49,14 @@ public class Movement : MonoBehaviour
             Jump();
         }
     }
+
+    private void OnTriggerEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            ScoreManager.scoreCount = 1;
+        }
+    }
    
     bool IsGrounded()
     {
