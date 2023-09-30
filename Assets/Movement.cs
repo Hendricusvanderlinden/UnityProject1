@@ -13,13 +13,11 @@ public class Movement : MonoBehaviour
 
     [SerializeField] AudioSource jumpSound;
 
-    // Start is called before the first frame update
     void Start()
     {
         move = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -49,15 +47,6 @@ public class Movement : MonoBehaviour
             Jump();
         }
     }
-
-    private void OnTriggerEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Coin")
-        {
-            ScoreManager.scoreCount = 1;
-        }
-    }
-   
     bool IsGrounded()
     {
         return Physics.CheckSphere(groundCheck.position, .1f, ground);

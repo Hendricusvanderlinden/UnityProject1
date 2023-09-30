@@ -7,15 +7,20 @@ public class ScoreManager : MonoBehaviour
     public Text scoreText;
     public static int scoreCount;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
+    }
+    private void scorecount(Collision other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            ScoreManager.scoreCount = 1;
+        }
     }
 }
