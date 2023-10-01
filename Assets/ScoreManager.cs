@@ -5,22 +5,19 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
-    public static int scoreCount;
+    public Text highscoretext;
+
+    int score = 0;
+    int highscore = 0;
 
     void Start()
     {
-        
+        scoreText.text = score.ToString() + " POINTS";
+        highscoretext.text = "HIGHSCORE: " + highscore.ToString();
     }
 
     void Update()
     {
-        scoreText.text = "Score: " + Mathf.Round(scoreCount);
-    }
-    private void scorecount(Collision other)
-    {
-        if (other.gameObject.tag == "Coin")
-        {
-            ScoreManager.scoreCount = 1;
-        }
+    
     }
 }
